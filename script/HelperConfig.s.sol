@@ -1,3 +1,7 @@
+/*The HelperConfig contract uses the constructor to check the chain id of the network we are testing on
+and returns the right priceFeed for the chain we are on and if were not on a live chain it creates a mock
+price feed for our anvil local test enviroment*/
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 

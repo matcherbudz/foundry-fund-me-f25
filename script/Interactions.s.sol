@@ -1,5 +1,7 @@
+/*Interactions is a way to test how our FundMe contract works with outside contracts and ABIs*/
+
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.18;
 
 import {Script, console} from "forge-std/Script.sol";
 import {FundMe} from "../src/FundMe.sol";

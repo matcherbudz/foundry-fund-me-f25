@@ -1,12 +1,13 @@
+/*This PriceConverter uses a library because it is a shared instance. It uses the chainlink AggregatorV3Interface which 
+has multiple values but in this project were only interested in the int256 answer which tells us the current price 
+then we get the conversion rate and return the price of ETH in USD*/
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
-// Why is this a library and not abstract?
-// Why not an interface?
 library PriceConverter {
-    // We could make this public, but then we'd have to deploy it
     function getPrice(
         AggregatorV3Interface priceFeed
     ) internal view returns (uint256) {

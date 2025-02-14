@@ -1,3 +1,10 @@
+/*This is the FundMe contract it is a simple crowd sourcing contract that keeps track of users and what they contribute
+even if they send eth directly to the address using fallback and recieve will always call the fund function 
+it uses the chainlink AggregatorV3Interface to convert the price of ethereum to USD and if they deposit less than 5 dollars
+worth it reverts and gives a "You need to spend more ETH!" message. Using the onlyOwner modifier we make sure only the 
+owner can use the withdraw function which goes through the funderIndex and resets them all to 0 then the withdraw function
+uses call to send the balance taken from the funders to the owner*/
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 
@@ -83,18 +90,6 @@ contract FundMe {
         require(callSuccess, "Call failed");
     }
 
-    // Explainer from: https://solidity-by-example.org/fallback/
-    // Ether is sent to contract
-    //      is msg.data empty?
-    //          /   \
-    //         yes  no
-    //         /     \
-    //    receive()?  fallback()
-    //     /   \
-    //   yes   no
-    //  /        \
-    //receive()  fallback()
-
     fallback() external payable {
         fund();
     }
@@ -103,7 +98,7 @@ contract FundMe {
         fund();
     }
 
-    // View/Pure functions getters
+    // Getter functions
 
     function getAddresstoAmountFunded(
         address fundingAddress
