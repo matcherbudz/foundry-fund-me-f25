@@ -88,6 +88,19 @@ forge script script/Interactions.s.sol:FundFundMe --rpc-url sepolia  --private-k
 forge script script/Interactions.s.sol:WithdrawFundMe --rpc-url sepolia  --private-key $PRIVATE_KEY  --broadcast
 ```
 
+or we can use make to test the scripts if we do this we need to add this to the foundry.toml to grant filesystem permissions this is default off to protect unauthorized access to your systems files
+```
+fs_permissions = [
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./reports" }
+]
+```
+
+```
+make fund
+make withdraw
+```
+
 ## Testing
 
 ```
@@ -124,6 +137,13 @@ type `forge script script/DeployFundMe.s.sol --rpc-url http://127.0.0.1:8545 --p
 (alternative encrypted private key 0x00 being the public address of the private key)`--account defaultKey 0x00`
 then copy the contract address and paste it in with `cast storage 0x00 X` replacing the 0x00 with the contract address and X 
 being the storage slot for example if we put 2 we get whats at storage slot 3 which is s_priceFeed
+
+# Testing with ZkSync
+First we need to install ZkSync foundry `curl -L https://raw.githubusercontent.com/matter-labs/foundry-zksync/main/install-foundry-zksync | bash` documentation https://foundry-book.zksync.io/getting-started/installation
+
+In this lesson I learned a bit about deploying to ZkSync and how with testing some things work with vanilla foundry and some things work with ZkSync in the ZkSyncDevOps.t.sol is a contract that tests this. 
+
+Forgive me for my lack of information here for I am still learning about ZkSync but its cool to know things are improving.
 
 # Additional Info:
 Some users were having a confusion that whether Chainlink-brownie-contracts is an official Chainlink repository or not. Here is the info.
