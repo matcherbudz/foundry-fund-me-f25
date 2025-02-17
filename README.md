@@ -3,13 +3,13 @@
 This solidity code is my first project I am pushing to github!!
 Shout out to my awesome teacher Patrick Collins and his team at Cyfrin Updraft. 
 
-This is a simple crowd source funding project. Whoever deploys the FundMe contract is assigned the owner. Users can deposit Ethereum and the contract keeps track of the users and the amount they fund. If anyone who is not the owner tries to withdraw the funds it will not work. When the owner withdraws it resets all the users balances to zero and uses a call function to withdraw all the funds to the owners wallet.
+This is a simple crowd source funding project. It had a minimum deposit of $5 of ethereum and converts the price of eth to usd using chainlink pricefeeds. Whoever deploys the FundMe contract is assigned the owner. Users can deposit Ethereum and the contract keeps track of the users and the amount they fund. If anyone who is not the owner tries to withdraw the funds it will not work. When the owner withdraws it resets all the users balances to zero and uses a call function to withdraw all the funds to the owners wallet.
 
 # Getting Started
 
 ## Requirements
 
-You will need git and foundry 
+You will need git, foundry, and make 
 
 Before starting, make sure you have them installed:
 
@@ -17,6 +17,8 @@ Before starting, make sure you have them installed:
 git --version
 
 forge --version
+
+make --version
 ```
 
 Expected outputs: 
@@ -25,12 +27,17 @@ Expected outputs:
 git version x.x.x 
 
 forge x.x.x(5a8bd89 2024-12-20T08:46:21.555250780Z)
+
+GNU Make 4.3
+Built for ...
 ```
 If git or foundry is not installed follow these links and instructions to install them
 
 [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 [foundry](https://getfoundry.sh/)
+
+make `sudo apt install make`
 
 # Important 
 
