@@ -3,7 +3,7 @@
 This solidity code is my first project I am pushing to github!!
 Shout out to my awesome teacher Patrick Collins and his team at Cyfrin Updraft. 
 
-This is a simple crowd source funding project. It had a minimum deposit of $5 of ethereum and converts the price of eth to usd using chainlink pricefeeds. Whoever deploys the FundMe contract is assigned the owner. Users can deposit Ethereum and the contract keeps track of the users and the amount they fund. If anyone who is not the owner tries to withdraw the funds it will not work. When the owner withdraws it resets all the users balances to zero and uses a call function to withdraw all the funds to the owners wallet.
+This is a simple crowd source funding project. It had a minimum deposit of $5 in ethereum and converts the price of eth to usd using chainlink pricefeeds. Whoever deploys the FundMe contract is assigned the owner. Users can deposit Ethereum and the contract keeps track of the users and the amount they fund. If anyone who is not the owner tries to withdraw the funds it will not work. When the owner withdraws it resets all the users balances to zero and uses a call function to withdraw all the funds to the owners wallet.
 
 # Getting Started
 
