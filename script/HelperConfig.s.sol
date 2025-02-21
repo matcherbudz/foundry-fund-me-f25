@@ -3,7 +3,7 @@ and returns the right priceFeed for the chain we are on and if were not on a liv
 price feed for our anvil local test enviroment*/
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.18;
+pragma solidity 0.8.19;
 
 import {Script} from "forge-std/Script.sol";
 import {MockV3Aggregator} from "../test/mocks/MockV3Aggregator.sol";
